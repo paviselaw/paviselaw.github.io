@@ -27,9 +27,12 @@
   }
   h1 {
     font-size: 2.5em;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.2em;
     text-align: center;
   }
+  .tagline { font-style: italic; margin: 0 0 0.8em; text-align:center; }
+  .phone { font-size:0.95em; color:#444; margin:0 0 1.2em; text-align:center; }
+
   #rotatingText {
     font-size: 1.2em;
     font-style: italic;
@@ -37,7 +40,7 @@
     min-height: 1.2em;
     opacity: 1;
     transition: opacity 1s ease-in-out;
-	text-align: center;
+    text-align: center;
   }
 
   /* ----- generic section wrapper ----- */
@@ -47,8 +50,8 @@
     text-align: center;           /* default; overridden in .faq */
   }
 
-  /* ----- staff layout ----- */
-  .staff {
+  /* ----- card grid layout ----- */
+  .staff, .interns {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -57,28 +60,25 @@
     gap: 2em;
   }
   .staff-member { max-width: 300px; }
-  .staff img {
-    width: 150px;
-    border-radius: 50%;
+  .staff img, .interns img {
+    width: 180px;
+    height: 214px;
+    object-fit: actual;
+    border-radius: 0; /* square */
     margin-bottom: 0.5em;
     filter: grayscale(100%);
     display: block;
   }
-  /* fine‑tuned spacing inside each staff card */
-  .staff-member h3 { margin: 0 0 0.15em; }   /* name */
-  .staff-member h4 { margin: 0 0 0.4em; }    /* title */
+  /* fine‑tuned spacing inside each card */
+  .staff-member h3 { margin: 0 0 0.15em; }
+  .staff-member h4 { margin: 0 0 0.4em; }
   .staff-member .email { margin: 0; }
 
   /* ----- FAQ overrides & styling ----- */
-  .faq { text-align: left; }                 /* left‑justify only this section */
-  .faq dl { margin: 0; }                     /* remove extra dl margin */
-  .faq dt {
-    font-weight: 700;
-    margin: 0.8em 0 0.15em;
-  }
-  .faq dd {
-    margin: 0 0 0.8em 1.2em;                 /* small indent */
-  }
+  .faq { text-align: left; }
+  .faq dl { margin: 0; }
+  .faq dt { font-weight: 700; margin: 0.8em 0 0.15em; }
+  .faq dd { margin: 0 0 0.8em 1.2em; }
 
   /* ----- footer ----- */
   footer {
@@ -94,6 +94,8 @@
 <header>
   <img src="triangle-logo.png" alt="Pavise Shield Logo">
   <h1>Pavise Law</h1>
+  <p class="tagline">We are a law firm.</p>
+  <p class="phone">206‑207‑1810 — Do not call us.</p>
   <div id="rotatingText" class="visible">Representation is not available.</div>
 </header>
 
@@ -102,41 +104,62 @@
   <div class="staff">
     <div class="staff-member">
       <img src="nacim.png" alt="Nacim Bouchtia">
-	  <div class="staff-member">
-  <h3 class="name">Nacim Bouchtia</h3>
-  <h4 class="title"><em>Attorney at Law</em></h4>
-  <p class="email"><a href="mailto:nacim@paviselaw.com">nacim@paviselaw.com</a></p>
-</div>
-      <p>A litigator’s litigator. Licensed in Washington. Speaks English, Tech, French, and criminal code.</p>
+      <h3 class="name">Nacim Bouchtia</h3>
+      <h4 class="title"><em>Attorney at Law</em></h4>
+      <p class="email"><a href="mailto:nacim@paviselaw.com">nacim@paviselaw.com</a></p>
+      <p>A litigator’s litigator. Licensed in Washington. Speaks English, tech, French, and criminal code.</p>
     </div>
     <div class="staff-member">
       <img src="lauren.png" alt="Lauren Lombardi">
-      <div class="staff-member">
-  <h3 class="name">Lauren Lombardi</h3>
-  <h4 class="title"><em>Paralegal</em></h4>
-  <p class="email"><a href="mailto:lauren@paviselaw.com">lauren@paviselaw.com</a></p>
+      <h3 class="name">Lauren Lombardi</h3>
+      <h4 class="title"><em>Paralegal</em></h4>
+      <p class="email"><a href="mailto:lauren@paviselaw.com">lauren@paviselaw.com</a></p>
       <p>Former funeral director. Discovery whisperer. Devoted mother.</p>
     </div>
   </div>
-  <p style="margin-top: 2em; font-style: italic; color: #333;">
-    Several additional staff members declined to be listed here due to reasons of professional discretion and personal safety.
-  </p>
+  <p style="margin-top: 2em; font-style: italic; color: #333;">Several additional staff members declined to be listed here due to reasons of professional discretion and personal safety.</p>
+</section>
+
+<section>
+  <h2>Legal Interns</h2>
+  <div class="interns">
+    <div class="staff-member">
+      <img src="ozzy.png" alt="Ozzy">
+      <h3 class="name">Ozzy</h3>
+      <h4 class="title"><em>Chief Rat Patrol</em></h4>
+      <p>Specializes in Olympic‑class high jumps and window surveillance.</p>
+    </div>
+    <div class="staff-member">
+      <img src="ziggy.png" alt="Ziggy">
+      <h3 class="name">Ziggy</h3>
+      <h4 class="title"><em>Comfort Procurer</em></h4>
+      <p>Fluent in Arabic meows and certified in alley‑level dispute resolution.</p>
+    </div>
+    <div class="staff-member">
+      <img src="layla.png" alt="Layla">
+      <h3 class="name">Layla</h3>
+      <h4 class="title"><em>In Memoriam 2010-2024</em></h4>
+      <p>Eternal muse, sentient sun-dial, and oversaw 14 years of moral guidance. Forever in chambers.</p>
+    </div>
+  </div>
 </section>
 
 <section class="faq">
   <h2>FAQ</h2>
-
   <dl>
     <dt>Q: Pavise? Paveesi? Pay‑veese?</dt>
-    <dd>A: Yes. It’s a medieval shield, commonly held by Italian crossbowmen.  
-        The name is meant to evoke erudition and the concept of defense—from criminal charges.</dd>
+    <dd>A: Yes. It’s a medieval shield, commonly held by Italian crossbowmen. The name is meant to evoke erudition and the concept of defense—from criminal charges.</dd>
 
-    <!-- add more Q/A pairs by duplicating dt/dd -->
+	<dt>Q: How do I pronounce “Bouchtia”?</dt>
+    <dd>A: However you just tried was incorrect.</dd>
+
     <dt>Q: Are you accepting new clients?</dt>
     <dd>A: No.</dd>
+	
+	<dt>Q: Seriously??</dt>
+	<dd>A: I will only consider matters referred by another attorney, or if you know the pass code. Good luck!</dd>
   </dl>
 </section>
-
 
 <footer>
   © Pavise Law. Presence acknowledged. Engagement declined.
@@ -150,13 +173,14 @@
     "This site is enough.",
     "We saw your email. No.",
     "Notice has been given.",
-	"No.",
+    "No.",
+    "You can't have us."
+	"We are not available."
   ];
 
   let index = 0;
   const el = document.getElementById("rotatingText");
 
-  // Show the first message immediately
   el.textContent = messages[index];
   el.style.opacity = 1;
 
@@ -166,12 +190,11 @@
       index = (index + 1) % messages.length;
       el.textContent = messages[index];
       el.style.opacity = 1;
-    }, 500); // half second fade out
+    }, 500);
   }
 
   setInterval(rotateText, 4000);
 </script>
-
 
 </body>
 </html>
